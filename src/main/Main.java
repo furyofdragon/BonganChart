@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class Main {
 
-	private JFrame frame;
+	private JFrame frmBonganchart;
 
 	/**
 	 * Launch the application.
@@ -16,7 +16,7 @@ public class Main {
 			public void run() {
 				try {
 					Main window = new Main();
-					window.frame.setVisible(true);
+					window.frmBonganchart.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -35,9 +35,11 @@ public class Main {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmBonganchart = new JFrame();
+		frmBonganchart.setResizable(false);
+		frmBonganchart.setTitle("Bongan Chart");
+		frmBonganchart.setBounds(100, 100, 700, 200);
+		frmBonganchart.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 }
