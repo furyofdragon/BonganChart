@@ -1,5 +1,7 @@
 package main;
 
+
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -49,10 +51,10 @@ public class Main {
 	 */
 	private void initialize() {
 		frmBonganChart = new JFrame();
-		frmBonganChart.setResizable(false);
 		frmBonganChart.setTitle("Bongan Chart");
-		frmBonganChart.setBounds(100, 100, 700, 200);
+		frmBonganChart.setBounds(100, 100, 640, 200);
 		frmBonganChart.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmBonganChart.setMinimumSize(new Dimension(640, 200));
 		
 		JLabel lblInputFile = new JLabel("Input file");
 		
@@ -72,19 +74,19 @@ public class Main {
 		lblAbout.setHorizontalAlignment(SwingConstants.CENTER);
 		GroupLayout groupLayout = new GroupLayout(frmBonganChart.getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblAbout, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
+						.addComponent(lblAbout, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblInputFile)
 								.addComponent(lblOutputFile))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
-								.addComponent(textInputPath, GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE))
+								.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+								.addComponent(textInputPath, GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnBrowseInput)
@@ -102,7 +104,7 @@ public class Main {
 							.addComponent(btnBrowseInput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblOutputFile, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+						.addComponent(lblOutputFile, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 							.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
 							.addComponent(btnBrowseOutput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
