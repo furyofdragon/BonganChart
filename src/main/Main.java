@@ -3,7 +3,10 @@ package main;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -12,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class Main {
 
@@ -62,6 +66,15 @@ public class Main {
 		textInputPath.setColumns(10);
 		
 		btnBrowseInput = new JButton("Browse");
+		btnBrowseInput.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser fileChooser = new JFileChooser();
+				fileChooser.addChoosableFileFilter(new FileNameExtensionFilter(".str", "STR", "str"));
+				fileChooser.showOpenDialog(fileChooser);
+
+			}
+		});
+		
 		
 		lblOutputFile = new JLabel("Output file");
 		
@@ -69,9 +82,21 @@ public class Main {
 		textOutputPath.setColumns(10);
 		
 		btnBrowseOutput = new JButton("Browse");
+		btnBrowseOutput.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser fileChooser = new JFileChooser();
+				fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Autocad DXF file", "DXF", "dxf"));
+				fileChooser.showSaveDialog(fileChooser);
+
+			}
+		});
+
 		
 		lblAbout = new JLabel("About");
 		lblAbout.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		
+		
 		GroupLayout groupLayout = new GroupLayout(frmBonganChart.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
