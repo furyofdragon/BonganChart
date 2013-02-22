@@ -63,14 +63,13 @@ public class Main {
 		JLabel lblInputFile = new JLabel("Input file");
 		
 		textInputPath = new JTextField();
-		textInputPath.setColumns(10);
 		
 		btnBrowseInput = new JButton("Browse");
 		btnBrowseInput.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.addChoosableFileFilter(new FileNameExtensionFilter(".str", "STR", "str"));
-				fileChooser.showOpenDialog(fileChooser);
+				JFileChooser fileOpenChooser = new JFileChooser();
+				fileOpenChooser.addChoosableFileFilter(new FileNameExtensionFilter(".str", "STR", "str"));
+				fileOpenChooser.showOpenDialog(fileOpenChooser);
 
 			}
 		});
@@ -79,14 +78,13 @@ public class Main {
 		lblOutputFile = new JLabel("Output file");
 		
 		textOutputPath = new JTextField();
-		textOutputPath.setColumns(10);
 		
 		btnBrowseOutput = new JButton("Browse");
 		btnBrowseOutput.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFileChooser fileChooser = new JFileChooser();
-				fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Autocad DXF file", "DXF", "dxf"));
-				fileChooser.showSaveDialog(fileChooser);
+				JFileChooser fileSaveChooser = new JFileChooser();
+				fileSaveChooser.addChoosableFileFilter(new FileNameExtensionFilter("Autocad DXF file", "DXF", "dxf"));
+				fileSaveChooser.showSaveDialog(fileSaveChooser);
 
 			}
 		});
@@ -94,6 +92,8 @@ public class Main {
 		
 		lblAbout = new JLabel("About");
 		lblAbout.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JButton btnCreateDXF = new JButton("Create DXF");
 		
 		
 		
@@ -103,15 +103,16 @@ public class Main {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblAbout, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
+						.addComponent(lblAbout, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblInputFile)
 								.addComponent(lblOutputFile))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
-								.addComponent(textInputPath, GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE))
+								.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+								.addComponent(textInputPath, GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+								.addComponent(btnCreateDXF, GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnBrowseInput)
@@ -133,8 +134,10 @@ public class Main {
 						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 							.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
 							.addComponent(btnBrowseOutput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(18)
-					.addComponent(lblAbout, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnCreateDXF)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(lblAbout, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		frmBonganChart.getContentPane().setLayout(groupLayout);
