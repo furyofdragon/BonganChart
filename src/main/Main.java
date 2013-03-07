@@ -152,9 +152,9 @@ public class Main {
 							.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
 							.addComponent(btnBrowseOutput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnCreateDXF, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(btnCreateDXF, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(lblAbout, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
+					.addComponent(lblAbout, GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
 					.addContainerGap())
 		);
 		frmBonganChart.getContentPane().setLayout(groupLayout);
