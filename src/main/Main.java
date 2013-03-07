@@ -99,7 +99,14 @@ public class Main {
 		});
 
 		
-		JButton btnCreateDXF = new JButton("Create DXF");
+		final JButton btnCreateDXF = new JButton("Create DXF");
+		btnCreateDXF.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ReadSource.ReadDataSource(textInputPath.getText());
+				WriteDXF.WriteToDXF(textOutputPath.getText());
+				btnCreateDXF.setText("DXF file created");
+			}
+		});
 		
 		
 		lblAbout = new JLabel("About");
@@ -145,7 +152,7 @@ public class Main {
 							.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
 							.addComponent(btnBrowseOutput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnCreateDXF)
+					.addComponent(btnCreateDXF, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(lblAbout, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
