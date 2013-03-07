@@ -99,6 +99,9 @@ public class Main {
 		});
 
 		
+		JButton btnCreateDXF = new JButton("Create DXF");
+		
+		
 		lblAbout = new JLabel("About");
 		lblAbout.setHorizontalAlignment(SwingConstants.CENTER);
 		
@@ -106,19 +109,20 @@ public class Main {
 		
 		GroupLayout groupLayout = new GroupLayout(frmBonganChart.getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
+			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblAbout, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblAbout, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblInputFile)
 								.addComponent(lblOutputFile))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
-								.addComponent(textInputPath, GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE))
+								.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+								.addComponent(textInputPath, GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+								.addComponent(btnCreateDXF, GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(btnBrowseInput)
@@ -140,8 +144,10 @@ public class Main {
 						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 							.addComponent(textOutputPath, GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
 							.addComponent(btnBrowseOutput, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-					.addGap(18)
-					.addComponent(lblAbout, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnCreateDXF)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(lblAbout, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		frmBonganChart.getContentPane().setLayout(groupLayout);
